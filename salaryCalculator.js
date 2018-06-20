@@ -7,10 +7,11 @@ var previousSalary = 0;
 
 /**
  * Will get a salary per second, given 
- * a yearly salary. Assumes 260 workdays
- * per year, and 8 hours per day. */
+ * a yearly salary. Assumes 8 hours a day
+ * and 240 work days (260 less holidays
+ * and 2 weeks vacation). */
 function getSalaryPerSecond(salary) {
-    return ((((salary / 260) / 8) / 60) / 60);
+    return ((((salary / 240) / 8) / 60) / 60);
 }
 
 /**
