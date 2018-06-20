@@ -5,6 +5,12 @@ html, input, button {
     color: #111;
 }
 
+body {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 button {
     margin: 0 0 2rem;
     border-radius: 0.25rem;
