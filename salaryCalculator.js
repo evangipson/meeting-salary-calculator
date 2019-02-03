@@ -26,9 +26,13 @@ function calculateSalary() {
     numberOfManagers = document.getElementById("ManagerAmount").value;
     numberOfEmployees = document.getElementById("EmployeeAmount").value;
     numberOfInterns = document.getElementById("InternAmount").value;
-    previousSalary += (numberOfEstaff * getSalaryPerSecond(200000)) + (numberOfManagers * getSalaryPerSecond(140000)) + (numberOfEmployees * getSalaryPerSecond(70000)) + (numberOfInterns * getSalaryPerSecond(35000));
-    document.getElementById("CurrentSalary").innerText = "Meeting Cost: $" + previousSalary.toFixed(2);
+    var totPerSecond = (numberOfEstaff * getSalaryPerSecond(200000)) + (numberOfManagers * getSalaryPerSecond(140000)) + (numberOfEmployees * getSalaryPerSecond(70000)) + (numberOfInterns * getSalaryPerSecond(35000));
+    previousSalary += totPerSecond;
+    document.getElementById("CurrentSalary").innerText = "Total Meeting Cost: $" + previousSalary.toFixed(2);
+    document.getElementById("CurrentCostPerMinute").innerText = "Cost Per Minute: $" + (totPerSecond * 60).toFixed(2);
 }
+
+
 
 document.getElementById("CalculateSalary").addEventListener("click", function () {
     if (salaryRunner) {
